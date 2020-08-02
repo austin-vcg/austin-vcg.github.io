@@ -1,6 +1,35 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This website is built using React.js. Future editors, please also continue to use
 
-## Available Scripts
+# UT Venture Capital Group Website
+
+## Organization
+
+This project has been organized into several parts. Please keep all appropriate materials in their respective locations.
+
+### Components
+
+This is where all page components go. Each component should be functional on its own.
+
+### Images
+
+All image resources should be placed here. Acceptable are PNG, SVG, JPEG/JPG, etc. No code should be placed here except for the index.js file.
+
+### Pages
+
+Only fully functional pages directly used by App.jsx should be placed here. Should use as many components from the "components" folder as possible, with as few components directly written onto these files as possible.
+
+## Standards
+
+There are several standards for building code in this present project. Please follow these conventions
+
+- Margins always are only on the right and bottom of a component
+- Use flexbox when possible
+- All styling will be in-line using styled-components, not CSS. Please look online for resources on this styling standard
+- All components should be functional. No object components
+- Use hooks for managing state, reducers, etc.
+- Will be updated with more to come!
+
+## Scripts
 
 In the project directory, you can run:
 
@@ -37,32 +66,6 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+#
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started) on managing and starting up React apps.
