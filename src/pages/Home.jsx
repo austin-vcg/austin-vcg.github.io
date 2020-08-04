@@ -168,7 +168,12 @@ const GridItem = styled.div`
   justify-content: flex-start;
   padding: 10px 15px;
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 600px) {
+    width: 175px;
+    padding: 10px 10px;
+  }
+
+  @media screen and (max-width: 1200px) {
     width: 250px;
   }
 `;
@@ -180,7 +185,7 @@ const Home = () => {
         <AnimatedDiv>
           <Navbar />
           <PageTitle>
-            <PageTitleText>Austin Venture Capital Group</PageTitleText>
+            <PageTitleText>Texas Venture Capital Group</PageTitleText>
             <SignUpButton
               onClick={() => window.open("http://google.com", "_blank")}
             >
@@ -209,8 +214,8 @@ const Home = () => {
         <Section>
           <SectionHeaderText>Our Mission Statement</SectionHeaderText>
           <SectionText>
-            We aim to create a close-knit organization focused on venture
-            capital and startup financing education and careers that encourages{" "}
+            We aim to create a close-knit organization focused education and
+            careers on venture capital and startup financing that supports{" "}
             <b>exploration and learning</b>, <b>networks and community</b>, and{" "}
             <b>professionalism</b>.
           </SectionText>
@@ -219,7 +224,7 @@ const Home = () => {
               <SectionIcon icon={["fas", "search"]} />
               <SectionHeaderText>Discover</SectionHeaderText>
               <SectionText>
-                At Austin VCG, our primary goal is always to introduce our
+                At Texas VCG, our primary goal is always to introduce our
                 members to field of venture capital, an area all too often
                 forgotten as an area of finance that seems beyond reach for the
                 average person. We want to redefine this vision of the industry
