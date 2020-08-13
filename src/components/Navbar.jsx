@@ -1,13 +1,22 @@
 import React, { useEffect, useState, useContext } from "react";
+import { animateScroll } from "react-scroll";
 import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { color_theme, text_theme } from "../theme";
+import useWindowDimensions from "../hooks/useWindowDimensions";
 
 const Bar = styled.div`
-  background-color: rgba(${color_theme.primary}, 0.5);
+  background-color: ${(props) =>
+    props.solid
+      ? css`
+      rgb(${color_theme.primary});
+        `
+      : css`
+      rgba(${color_theme.primary}, 0.5);
+        `}
   display: flex;
   flex-direction: row;
   color: white;
@@ -67,6 +76,7 @@ const ItemGoTo = styled.div`
   align-items: center;
   display: flex;
   padding: 0px 10px;
+  cursor: pointer;
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.3);
@@ -84,8 +94,10 @@ const TitleLink = styled(Link)`
   text-decoration: none;
   font-size: 30px;
   transition: 0.5s;
-  align-items: center;
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 
   @media screen and (max-width: 600px) {
     font-size: 20px;
@@ -114,37 +126,24 @@ const NavButton = styled.div`
   }
 `;
 
-function getWindowDimensions() {
-  const { innerWidth: width, innerHeight: height } = window;
-  return {
-    width,
-    height,
-  };
-}
+const Logo = styled.div`
+  width: 40px;
+  height: 40px;
 
-const useWindowDimensions = () => {
-  const { innerWidth: width, innerHeight: height } = window;
-
-  const [windowDimensions, setWindowDimensions] = useState({
-    width,
-    height,
-  });
-
-  useEffect(() => {
-    function handleResize() {
-      setWindowDimensions(getWindowDimensions());
-    }
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  return windowDimensions;
-};
+  background: url(${(props) => props.src}) center center no-repeat;
+  background-size: contain;
+  padding: 5px;
+  margin-right: 10px;
+  transition: 0.5s;
+  @media screen and (max-width: 600px) {
+    width: 30px;
+    height: 30px;
+  }
+`;
 
 const OpenContext = React.createContext(null);
 
-const Navbar = () => {
+const Navbar = ({ solid = false }) => {
   const { pathname } = useLocation();
 
   const [open, setOpen] = useState(false);
@@ -158,8 +157,9 @@ const Navbar = () => {
   }, [width]);
 
   return (
-    <Bar>
+    <Bar solid={solid}>
       <TitleLink to="/" replace={pathname === "/"}>
+        <Logo src="../images/logo.png" />
         Texas VCG
       </TitleLink>
       <ItemList>
@@ -171,12 +171,13 @@ const Navbar = () => {
             <ItemLink to="/team" replace={pathname === "/team"}>
               Team
             </ItemLink>
-            <ItemLink to="/resources" replace={pathname === "/resources"}>
-              Resources
+            <ItemLink to="/members" replace={pathname === "/members"}>
+              For Members
             </ItemLink>
-            <ItemGoTo
-              onClick={() => window.scrollTo(0, document.body.scrollHeight)}
-            >
+            {/*<ItemLink to="/resources" replace={pathname === "/resources"}>
+              Resources
+            </ItemLink>*/}
+            <ItemGoTo onClick={() => animateScroll.scrollToBottom()}>
               Contact
             </ItemGoTo>
           </>
@@ -191,12 +192,13 @@ const Navbar = () => {
                 <ItemLink to="/team" replace={pathname === "/team"}>
                   Team
                 </ItemLink>
-                <ItemLink to="/resources" replace={pathname === "/resources"}>
-                  Resources
+                <ItemLink to="/members" replace={pathname === "/members"}>
+                  For Members
                 </ItemLink>
-                <ItemGoTo
-                  onClick={() => window.scrollTo(0, document.body.scrollHeight)}
-                >
+                {/*<ItemLink to="/resources" replace={pathname === "/resources"}>
+                      Resources
+                </ItemLink>*/}
+                <ItemGoTo onClick={() => animateScroll.scrollToBottom()}>
                   Contact
                 </ItemGoTo>
               </Sidebar>

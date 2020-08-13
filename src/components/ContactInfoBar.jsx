@@ -34,6 +34,7 @@ const ContactItem = styled.div`
   text-decoration: none;
   transition: 0.5s;
   margin-bottom: 5px;
+  cursor: pointer;
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.5);

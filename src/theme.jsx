@@ -8,7 +8,7 @@ export let text_theme = {
 };
 
 export let color_theme = {
-  primary: "25, 25, 112", //steel blue
-  secondary: "70, 130, 180", //steel blue
-  tertiary: "0, 100, 0", //dark green
+  primary: "4, 69, 143", //midnight blue
+  secondary: "139,195,74", //yellow green
+  tertiary: "18,115,235", //dodger blue
 };

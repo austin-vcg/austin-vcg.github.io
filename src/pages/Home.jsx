@@ -1,10 +1,10 @@
-import React, { useRef } from "react";
+import React from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { Navbar, Footer, ContactInfoBar } from "../components";
-import { home_bg } from "../images";
+import { Navbar, Footer, Calendar } from "../components";
 import { color_theme, text_theme } from "../theme";
+import { GOOGLE_API_KEY, CALENDAR_ID, SIGNUP_LINK } from "../config";
 
 const HomePage = styled.div`
   background: transparent;
@@ -15,7 +15,7 @@ const HomePage = styled.div`
 
 const Header = styled.div`
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(${home_bg}) center;
+    url("../images/home_bg.jpg") center;
   background-size: cover;
 `;
 
@@ -118,12 +118,13 @@ const SectionIcon = styled(FontAwesomeIcon)`
   }
 `;
 
-const SectionHeaderText = styled.span`
+const SectionH1 = styled.span`
   font-size: 30px;
   margin-bottom: 25px;
   text-align: center;
   font-family: ${text_theme.header.font};
   color: rgb(${color_theme.primary});
+  font-weight: normal;
   @media screen and (max-width: 600px), (max-height: 600px) {
     margin-bottom: 10px;
     font-size: 25px;
@@ -178,6 +179,21 @@ const GridItem = styled.div`
   }
 `;
 
+const Logo = styled.div`
+  width: 60px;
+  height: 60px;
+
+  background: url(${(props) => props.src}) center center no-repeat;
+  background-size: contain;
+  padding: 5px;
+  margin-bottom: 15px;
+  transition: 0.5s;
+  @media screen and (max-width: 600px) {
+    width: 50px;
+    height: 50px;
+  }
+`;
+
 const Home = () => {
   return (
     <HomePage>
@@ -186,22 +202,22 @@ const Home = () => {
           <Navbar />
           <PageTitle>
             <PageTitleText>Texas Venture Capital Group</PageTitleText>
-            <SignUpButton
-              onClick={() => window.open("http://google.com", "_blank")}
-            >
-              Sign Up
-            </SignUpButton>
+            {SIGNUP_LINK === undefined ? undefined : (
+              <SignUpButton onClick={() => window.open(SIGNUP_LINK, "_blank")}>
+                Sign Up
+              </SignUpButton>
+            )}
           </PageTitle>
         </AnimatedDiv>
       </Header>
 
       <Body>
         <Section>
-          <SectionIcon icon={["fas", "hand-holding-usd"]} />
-          <SectionHeaderText>
-            UT Austin's student-led organization on venture capital and startup
-            funding.
-          </SectionHeaderText>
+          <Logo src="../images/logo.png" />
+          <SectionH1>
+            UT Austin's premier student-led organization on venture capital and
+            startup investing.
+          </SectionH1>
           <SectionText>
             Austin is home to one of the world's fastest growing startup
             ecosystems. We hope to bring more awareness to venture capital at
@@ -212,7 +228,7 @@ const Home = () => {
         </Section>
         <Line />
         <Section>
-          <SectionHeaderText>Our Mission Statement</SectionHeaderText>
+          <SectionH1>Our Mission Statement</SectionH1>
           <SectionText>
             We aim to create a close-knit organization focused education and
             careers on venture capital and startup financing that supports{" "}
@@ -222,7 +238,7 @@ const Home = () => {
           <SectionGrid>
             <GridItem>
               <SectionIcon icon={["fas", "search"]} />
-              <SectionHeaderText>Discover</SectionHeaderText>
+              <SectionH1>Discover</SectionH1>
               <SectionText>
                 At Texas VCG, our primary goal is always to introduce our
                 members to field of venture capital, an area all too often
@@ -234,7 +250,7 @@ const Home = () => {
             </GridItem>
             <GridItem>
               <SectionIcon icon={["far", "address-book"]} />
-              <SectionHeaderText>Connect</SectionHeaderText>
+              <SectionH1>Connect</SectionH1>
               <SectionText>
                 A core mission of our organization is to foster a community
                 connected to the wider scene of venture capital and innovation.
@@ -246,7 +262,7 @@ const Home = () => {
             </GridItem>
             <GridItem>
               <SectionIcon icon={["fas", "briefcase"]} />
-              <SectionHeaderText>Prepare</SectionHeaderText>
+              <SectionH1>Prepare</SectionH1>
               <SectionText>
                 Through our activities and events, we hope to build in our
                 members a clear understanding of the industry's work and the
@@ -259,6 +275,10 @@ const Home = () => {
               </SectionText>
             </GridItem>
           </SectionGrid>
+        </Section>
+        <Section>
+          <SectionH1>Upcoming Events</SectionH1>
+          <Calendar apiKey={GOOGLE_API_KEY} calendarId={CALENDAR_ID} />
         </Section>
       </Body>
 
