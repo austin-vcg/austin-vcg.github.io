@@ -203,7 +203,7 @@ const Team = () => {
       ),
     },
     {
-      name: "Sharan Tatieneni",
+      name: "Sharan Tatineni",
       role: "Director of Finances",
       major: "Finance",
       picture: "../images/officers/sharan_tatineni.jpg",
@@ -211,7 +211,7 @@ const Team = () => {
         <ProfileText>
           Sharan is a freshman at UT Austin studying Finance from Plano, Texas.
           This summer, he completed economic research and data analysis at a
-          COVID-19 non-profit organization. Outside of UT PBL, Sharan enjoys
+          COVID-19 non-profit organization. Outside of UT VCG, Sharan enjoys
           following football, eating at his favorite places (Taco Bell), and
           spending time with his family.
         </ProfileText>
