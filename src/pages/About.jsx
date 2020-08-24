@@ -10,12 +10,12 @@ const HomePage = styled.div`
   background: transparent;
   display: flex;
   flex-direction: column;
-  transition: 0.5s;
 `;
 
 const Header = styled.div`
   background: transparent;
   background-size: cover;
+  margin-bottom: 2vh;
 `;
 
 const SignUpButton = styled.div`
@@ -43,7 +43,7 @@ const Body = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  transition: 0.5s;
   background-color: white;
 `;
 
@@ -51,7 +51,8 @@ const Section = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3vh 10vw;
+  padding: 2vh 10vw;
+  margin-bottom: 3vh;
 `;
 
 const SectionIcon = styled(FontAwesomeIcon)`
@@ -111,7 +112,7 @@ const Line = styled.hr`
   color: black;
   width: 80%;
 `;
-const SectionGrid = styled.div`
+const GridArea = styled.div`
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -120,7 +121,7 @@ const SectionGrid = styled.div`
 `;
 
 const GridItem = styled.div`
-  width: 325px;
+  width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -168,7 +169,7 @@ const About = ({}) => {
             the venture capital industry. We hope to provide resources to our
             members and all students at UT Austin in various ways.
           </SectionText>
-          <SectionGrid>
+          <GridArea>
             <GridItem>
               <SectionH2>Discussions</SectionH2>
               <SectionText>
@@ -205,7 +206,7 @@ const About = ({}) => {
                 on the right path.
               </SectionText>
             </GridItem>
-          </SectionGrid>
+          </GridArea>
         </Section>
 
         <Section>
@@ -232,9 +233,9 @@ const About = ({}) => {
               innovative individuals far into the future.
             </p>
           </SectionText>
+          <Line />
         </Section>
 
-        <Line />
         <Section>
           <SectionH1>Join us today!</SectionH1>
           {SIGNUP_LINK === undefined ? (

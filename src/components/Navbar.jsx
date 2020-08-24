@@ -8,14 +8,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { color_theme, text_theme } from "../theme";
 import useWindowDimensions from "../hooks/useWindowDimensions";
 
+const rgbMultiplier = 1.25;
+
+const barRGB = `${color_theme.rgb.primary.r * rgbMultiplier}, ${
+  color_theme.rgb.primary.g * rgbMultiplier
+}, ${color_theme.rgb.primary.b * rgbMultiplier}`;
+
 const Bar = styled.div`
   background-color: ${(props) =>
     props.solid
       ? css`
-      rgb(${color_theme.primary});
+      rgb(${barRGB});
         `
       : css`
-      rgba(${color_theme.primary}, 0.5);
+      rgba(${barRGB}, 0.5);
         `}
   display: flex;
   flex-direction: row;

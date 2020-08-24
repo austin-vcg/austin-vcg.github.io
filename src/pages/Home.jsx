@@ -10,26 +10,25 @@ const HomePage = styled.div`
   background: transparent;
   display: flex;
   flex-direction: column;
-  transition: 0.5s;
 `;
 
 const Header = styled.div`
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../images/home_bg.jpg") center;
+  background: url("../images/home_bg.jpg") center;
   background-size: cover;
+  margin-bottom: 2vh;
 `;
 
 const AnimatedDiv = styled.div`
-  animation: fade-in 4s both;
-  height: 80vh;
   display: flex;
   flex-direction: column;
-  @keyframes fade-in {
+  height: 80vh;
+  animation: bg-fade-in 4s both;
+  @keyframes bg-fade-in {
     from {
-      background-color: rgba(0, 0, 0, 1);
+      background-color: rgba(0, 0, 0, 0.25);
     }
     to {
-      background-color: rgba(0, 0, 0, 0);
+      background-color: rgba(0, 0, 0, 0.6);
     }
   }
 `;
@@ -50,15 +49,37 @@ const PageTitleText = styled.span`
   font-size: 55px;
   text-align: center;
   font-family: ${text_theme.header.font};
+  animation: fade-in 2s;
 
   @media screen and (max-width: 600px), (max-height: 600px) {
     font-size: 40px;
   }
 
-  @media screen and (min-width: 900px) {
-    overflow: hidden;
-    white-space: nowrap;
-    animation: typing 2s steps(28, end) 1s 1 normal both;
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+`;
+
+const PageTitleSubtext = styled.span`
+  margin-bottom: 3vh;
+  font-size: 25px;
+  text-align: center;
+  font-family: ${text_theme.default.font};
+  color: rgb(${color_theme.secondary});
+
+  overflow: hidden;
+  white-space: nowrap;
+  letter-spacing: 3px;
+  animation: typing 3.5s steps(60) 1.5s 1 normal both;
+
+  @media screen and (max-width: 600px), (max-height: 600px) {
+    font-size: 20px;
+    animation: typing 2.5s steps(45) 1.5s 1 normal both;
   }
 
   @keyframes typing {
@@ -96,7 +117,7 @@ const Body = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  transition: 0.5s;
   background-color: white;
 `;
 
@@ -104,7 +125,8 @@ const Section = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5vh 10vw;
+  padding: 2vh 10vw;
+  margin-bottom: 3vh;
 `;
 
 const SectionIcon = styled(FontAwesomeIcon)`
@@ -153,7 +175,7 @@ const Line = styled.hr`
   width: 80%;
 `;
 
-const SectionGrid = styled.div`
+const GridArea = styled.div`
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -202,6 +224,9 @@ const Home = () => {
           <Navbar />
           <PageTitle>
             <PageTitleText>Texas Venture Capital Group</PageTitleText>
+            <PageTitleSubtext>
+              UT Austin <b style={{ color: "white" }}>x</b> Venture Capital
+            </PageTitleSubtext>
             {SIGNUP_LINK === undefined ? undefined : (
               <SignUpButton onClick={() => window.open(SIGNUP_LINK, "_blank")}>
                 Sign Up
@@ -235,7 +260,7 @@ const Home = () => {
             <b>exploration and learning</b>, <b>networks and community</b>, and{" "}
             <b>professionalism</b>.
           </SectionText>
-          <SectionGrid>
+          <GridArea>
             <GridItem>
               <SectionIcon icon={["fas", "search"]} />
               <SectionH1>Discover</SectionH1>
@@ -264,17 +289,16 @@ const Home = () => {
               <SectionIcon icon={["fas", "briefcase"]} />
               <SectionH1>Prepare</SectionH1>
               <SectionText>
-                Through our activities and events, we hope to build in our
-                members a clear understanding of the industry's work and the
-                practical, real-life skills essential for the field. We aim to
-                foster analytical minds that can think with depth and clarity to
-                capture opportunities in the startup world, while building
-                involved individuals that see startup as not only investments
-                and opportunities, but partners and teammates willing to face
-                hardships and uncertainty together.
+                We aim to help members build a clear understanding of the
+                industry's work and the practical, real-life skills essential
+                for the field. We aim to foster analytical minds that can think
+                with depth and creativity to find groundbreaking startups, while
+                forming individuals that see startup as not only investments,
+                but as teammates who can face hardships and uncertainty
+                together.
               </SectionText>
             </GridItem>
-          </SectionGrid>
+          </GridArea>
         </Section>
         <Section>
           <SectionH1>Upcoming Events</SectionH1>

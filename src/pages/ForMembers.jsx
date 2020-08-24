@@ -10,12 +10,12 @@ const HomePage = styled.div`
   background: transparent;
   display: flex;
   flex-direction: column;
-  transition: 0.5s;
 `;
 
 const Header = styled.div`
   background: transparent;
   background-size: cover;
+  margin-bottom: 2vh;
 `;
 
 const Body = styled.div`
@@ -23,7 +23,7 @@ const Body = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  transition: 0.5s;
   background-color: white;
 `;
 
@@ -31,7 +31,8 @@ const Section = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3vh 10vw;
+  padding: 2vh 10vw;
+  margin-bottom: 3vh;
 `;
 
 const SectionIcon = styled(FontAwesomeIcon)`

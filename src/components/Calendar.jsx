@@ -36,17 +36,12 @@ const CalendarItem = styled.div`
   border-bottom: rgb(${color_theme.primary}) 2px solid;
   transition: 0.25s;
   background-color: white;
-  font-size: 22px;
 
   &:hover {
     background: rgba(0, 0, 0, 0.3);
     & > * {
       color: white;
     }
-  }
-
-  @media screen and (max-width: 600px) {
-    font-size: 17px;
   }
 `;
 
@@ -56,6 +51,11 @@ const ItemName = styled.span`
   transition: 0.25s;
   color: black;
   flex: 2;
+  font-size: 22px;
+
+  @media screen and (max-width: 600px) {
+    font-size: 17px;
+  }
 `;
 
 const ItemDescription = styled.span`
@@ -64,6 +64,12 @@ const ItemDescription = styled.span`
   text-align: right;
   transition: 0.25s;
   color: rgb(${color_theme.tertiary});
+
+  font-size: 22px;
+
+  @media screen and (max-width: 600px) {
+    font-size: 17px;
+  }
 `;
 
 const NoItems = styled.span`

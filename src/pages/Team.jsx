@@ -9,11 +9,12 @@ const HomePage = styled.div`
   background: transparent;
   display: flex;
   flex-direction: column;
-  transition: 0.5s;
 `;
 
 const Header = styled.div`
   background-size: cover;
+  background: transparent;
+  margin-bottom: 2vh;
 `;
 
 const Body = styled.div`
@@ -21,7 +22,7 @@ const Body = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  transition: 0.5s;
   background-color: white;
 `;
 
@@ -29,7 +30,8 @@ const Section = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5vh 10vw;
+  padding: 2vh 10vw;
+  margin-bottom: 3vh;
 `;
 
 const SectionIcon = styled(FontAwesomeIcon)`
@@ -89,6 +91,10 @@ const SectionText = styled.span`
 const Line = styled.hr`
   color: black;
   width: 80%;
+`;
+
+const ProfileSection = styled(Section)`
+  padding: 2vh 1vw;
 `;
 
 const ProfileGrid = styled.div`
@@ -234,29 +240,31 @@ const Team = () => {
             exposure into the world of venture capital. We've built a team of
             able leaders to lead the organization towards this goal.
           </SectionText>
+          <Line />
         </Section>
 
-        <Line />
-        <ProfileGrid>
-          {profiles.map((profile) => (
-            <Profile>
-              <SectionH1>{profile.name}</SectionH1>
-              <ProfileImg
-                src={
-                  profile.picture === undefined
-                    ? "../images/officers/missing_profile.png"
-                    : profile.picture
-                }
-                alt={profile.name}
-              />
-              <SectionH2>{profile.role}</SectionH2>
-              <SectionText>
-                <i>{profile.major}</i>
-              </SectionText>
-              {profile.bio}
-            </Profile>
-          ))}
-        </ProfileGrid>
+        <ProfileSection>
+          <ProfileGrid>
+            {profiles.map((profile) => (
+              <Profile>
+                <SectionH1>{profile.name}</SectionH1>
+                <ProfileImg
+                  src={
+                    profile.picture === undefined
+                      ? "../images/officers/missing_profile.png"
+                      : profile.picture
+                  }
+                  alt={profile.name}
+                />
+                <SectionH2>{profile.role}</SectionH2>
+                <SectionText>
+                  <i>{profile.major}</i>
+                </SectionText>
+                {profile.bio}
+              </Profile>
+            ))}
+          </ProfileGrid>
+        </ProfileSection>
       </Body>
 
       <Footer />
