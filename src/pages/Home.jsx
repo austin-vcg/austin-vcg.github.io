@@ -40,7 +40,7 @@ const PageTitle = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0px 10%;
+  padding: 0px 3vw;
   transition: 0.5s;
 `;
 
@@ -53,6 +53,10 @@ const PageTitleText = styled.span`
 
   @media screen and (max-width: 600px), (max-height: 600px) {
     font-size: 40px;
+  }
+
+  @media screen and (max-width: 350px) {
+    font-size: 34px;
   }
 
   @keyframes fade-in {
@@ -75,11 +79,12 @@ const PageTitleSubtext = styled.span`
   overflow: hidden;
   white-space: nowrap;
   letter-spacing: 3px;
-  animation: typing 3.5s steps(60) 1.5s 1 normal both;
+  animation: typing 3.25s steps(55) 1.5s 1 normal both;
 
   @media screen and (max-width: 600px), (max-height: 600px) {
+    letter-spacing: 1px;
     font-size: 20px;
-    animation: typing 2.5s steps(45) 1.5s 1 normal both;
+    animation: typing 1.5s steps(22) 1.5s 1 normal both;
   }
 
   @keyframes typing {
