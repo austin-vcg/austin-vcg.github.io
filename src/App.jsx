@@ -1,11 +1,17 @@
 import React from "react";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import {
+  BrowserRouter,
+  HashRouter,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 
 import { Home, About, Team, NotFound, ForMembers } from "./pages";
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <HashRouter hashType="noslash">
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/about" component={About} />
@@ -14,7 +20,7 @@ const App = () => {
         <Route exact path="/404" component={NotFound} />
         <Redirect to="/404" />
       </Switch>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
