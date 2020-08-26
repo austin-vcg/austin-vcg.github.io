@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import moment from "moment";
 import styled from "styled-components";
+// import Modal from "react-modal";
 /* global gapi */
 
 import { color_theme, text_theme } from "../theme";
@@ -52,6 +53,7 @@ const ItemName = styled.span`
   color: black;
   flex: 2;
   font-size: 22px;
+  font-weight: bold;
 
   @media screen and (max-width: 600px) {
     font-size: 17px;
@@ -88,6 +90,13 @@ const NoItems = styled.span`
 
 const Calendar = ({ apiKey, calendarId }) => {
   const [events, setEvents] = useState([]);
+  // const [isModalOpen, setModalOpen] = useState(false);
+  // const [displayedEvent, setDisplayedEvent] = useState(undefined);
+
+  // const openModal = (event) => {
+  //   setDisplayedEvent(event);
+  //   setModalOpen(true);
+  // };
 
   useEffect(() => {
     const start = () => {
@@ -132,7 +141,7 @@ const Calendar = ({ apiKey, calendarId }) => {
 
     if (event.start.dateTime === undefined) {
       element = (
-        <ItemDescription onClick={() => window.open(event.htmlLink, "_blank")}>
+        <ItemDescription>
           {moment(event.start.date).format("MMM Do")} to{" "}
           {moment(event.end.date).format("MMM Do")}
         </ItemDescription>
@@ -141,17 +150,13 @@ const Calendar = ({ apiKey, calendarId }) => {
       moment(event.start.dateTime).format("MMM Do") ===
       moment(event.end.dateTime).format("MMM Do")
         ? (element = (
-            <ItemDescription
-              onClick={() => window.open(event.htmlLink, "_blank")}
-            >
+            <ItemDescription>
               {moment(event.start.dateTime).format("MMM Do, h:mm a")} to{" "}
               {moment(event.end.dateTime).format("h:mm a")}
             </ItemDescription>
           ))
         : (element = (
-            <ItemDescription
-              onClick={() => window.open(event.htmlLink, "_blank")}
-            >
+            <ItemDescription>
               {moment(event.start.dateTime).format("MMM Do, h:mm a")} to{" "}
               {moment(event.end.dateTime).format("MMM Do, h:mm a")}{" "}
             </ItemDescription>
@@ -162,6 +167,13 @@ const Calendar = ({ apiKey, calendarId }) => {
 
   return (
     <div>
+      {/* <Modal
+        isOpen={isModalOpen}
+        onRequestClose={() => setModalOpen(false)}
+        contentLabel={displayedEvent ? displayedEvent.summary : ""}
+      >
+        Hello People
+      </Modal> */}
       <CalendarBar>
         <ItemName>Event</ItemName>
         <ItemDescription>Time</ItemDescription>
@@ -171,7 +183,8 @@ const Calendar = ({ apiKey, calendarId }) => {
           <NoItems>No upcoming events</NoItems>
         ) : (
           events.map((event) => (
-            <CalendarItem>
+            // <CalendarItem onClick={() => openModal(event)}>
+            <CalendarItem onClick={() => window.open(event.htmlLink, "_blank")}>
               <ItemName>{event.summary}</ItemName>
               {makeCalendarDescription(event)}
             </CalendarItem>

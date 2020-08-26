@@ -62,10 +62,17 @@ const Footer = () => {
       <ItemList>
         {/* <Item onClick={() => window.open("http://linkedin.com", "_blank")}>
           <Icon icon={["fab", "linkedin-in"]} />
-        </Item>
-        <Item onClick={() => window.open("http://facebook.com", "_blank")}>
-          <Icon icon={["fab", "facebook"]} />
         </Item> */}
+        <Item
+          onClick={() =>
+            window.open(
+              "https://www.facebook.com/texasventurecapital",
+              "_blank"
+            )
+          }
+        >
+          <Icon icon={["fab", "facebook"]} />
+        </Item>
         <Item
           onClick={() =>
             window.open("https://www.instagram.com/texasvcg/", "_blank")
