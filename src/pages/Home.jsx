@@ -307,7 +307,9 @@ const Home = () => {
         </Section>
         <Section>
           <SectionH1>Upcoming Events</SectionH1>
-          <SectionText>Click for more info! All times are CST</SectionText>
+          <SectionText>
+            Click for more info! All times are CST. Times are subject to change.
+          </SectionText>
           <Calendar apiKey={GOOGLE_API_KEY} calendarId={CALENDAR_ID} />
         </Section>
       </Body>

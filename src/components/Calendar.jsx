@@ -143,7 +143,7 @@ const Calendar = ({ apiKey, calendarId }) => {
       element = (
         <ItemDescription>
           {moment(event.start.date).format("MMM Do")} to{" "}
-          {moment(event.end.date).format("MMM Do")} CST
+          {moment(event.end.date).format("MMM Do")}
         </ItemDescription>
       );
     } else {

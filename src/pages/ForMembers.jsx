@@ -197,7 +197,7 @@ const ForMembers = () => {
             )}
           </DropDownButton>
           <CalendarSection
-            src="https://calendar.google.com/calendar/embed?src=21j1cj1b2h7ank71t9lsc6msps%40group.calendar.google.com&ctz=America%2FLos_Angeles"
+            src="https://calendar.google.com/calendar/embed?src=21j1cj1b2h7ank71t9lsc6msps%40group.calendar.google.com&ctz=America%2FChicago"
             title="Upcoming Events"
             width={width > 500 ? width * 0.75 : 433}
             height={viewCalendar ? height * 0.75 : 0}
