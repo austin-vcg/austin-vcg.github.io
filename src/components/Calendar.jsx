@@ -143,7 +143,7 @@ const Calendar = ({ apiKey, calendarId }) => {
       element = (
         <ItemDescription>
           {moment(event.start.date).format("MMM Do")} to{" "}
-          {moment(event.end.date).format("MMM Do")}
+          {moment(event.end.date).format("MMM Do")} CST
         </ItemDescription>
       );
     } else {
@@ -152,13 +152,13 @@ const Calendar = ({ apiKey, calendarId }) => {
         ? (element = (
             <ItemDescription>
               {moment(event.start.dateTime).format("MMM Do, h:mm a")} to{" "}
-              {moment(event.end.dateTime).format("h:mm a")}
+              {moment(event.end.dateTime).format("h:mm a")} CST
             </ItemDescription>
           ))
         : (element = (
             <ItemDescription>
               {moment(event.start.dateTime).format("MMM Do, h:mm a")} to{" "}
-              {moment(event.end.dateTime).format("MMM Do, h:mm a")}{" "}
+              {moment(event.end.dateTime).format("MMM Do, h:mm a")} CST
             </ItemDescription>
           ));
     }
