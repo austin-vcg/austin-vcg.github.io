@@ -100,7 +100,7 @@ const PageTitleSubtext = styled.span`
 const SignUpButton = styled.div`
   background-color: transparent;
   font-size: 35px;
-  border: white 3px double;
+  border: white 4px double;
   font-family: ${text_theme.header.font};
   margin: 5px;
   padding: 10px;

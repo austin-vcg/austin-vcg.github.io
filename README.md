@@ -1,6 +1,6 @@
 This website is built using React.js. Future editors, please also continue to use
 
-# UT Venture Capital Group Website
+# Texas Venture Capital Group Website
 
 ## Organization
 
