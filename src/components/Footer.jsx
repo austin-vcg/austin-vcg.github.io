@@ -60,9 +60,13 @@ const Footer = () => {
     <FooterBar>
       <ContactInfoBar />
       <ItemList>
-        {/* <Item onClick={() => window.open("http://linkedin.com", "_blank")}>
+        <Item
+          onClick={() =>
+            window.open("https://www.linkedin.com/company/texas-vcg/", "_blank")
+          }
+        >
           <Icon icon={["fab", "linkedin-in"]} />
-        </Item> */}
+        </Item>
         <Item
           onClick={() =>
             window.open(
