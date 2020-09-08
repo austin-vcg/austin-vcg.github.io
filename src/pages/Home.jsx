@@ -245,8 +245,8 @@ const Home = () => {
         <Section>
           <Logo src="../images/logo.png" />
           <SectionH1>
-            UT Austin's premier student-led organization on venture capital and
-            startup investing.
+            The premier student-led organization on venture capital and startup
+            investing at UT Austin's.
           </SectionH1>
           <SectionText>
             Austin is home to one of the world's fastest growing startup

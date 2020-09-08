@@ -201,9 +201,10 @@ const About = ({}) => {
                 and insight that are advantageous in any industry, especially in
                 entrepreneurship and finance. That's why VCG plans to hold
                 panels or single-person meetings, virtually or in-person, with
-                leaders in the local Austin and greater startup and ventur
+                leaders in the local Austin and greater startup and venture
                 capital community to hear their experience and advice to getting
-                on the right path.
+                on the right path. Our <i>Industry Insights</i> speaker and
+                panelist series are open to all members.
               </SectionText>
             </GridItem>
           </GridArea>
