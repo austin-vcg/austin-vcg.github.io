@@ -246,11 +246,19 @@ const Home = () => {
           <Logo src="../images/logo.png" />
           <SectionH1>
             The premier student-led organization on venture capital and startup
-            investing at UT Austin's.
+            investing at the University of Texas at Austin.
           </SectionH1>
           <SectionText>
             Austin is home to one of the world's fastest growing startup
-            ecosystems. We hope to bring more awareness to venture capital at
+            ecosystems. Entrepreneurship is one of the hottest career paths in
+            the region. However, one side of entrepreneurship is often passed
+            over or forgotten: venture capital. Venture capital, or VC, is the
+            keystone to fueling innovators with investments and direct
+            partnerships to help them get their products into the global
+            spotlight. Although the field has traditionally been very selective
+            and limited, recent changes in startup culture has offered a opening
+            for a newer, more diverse generations of investors to get into the
+            industry. We hope to bring more awareness to venture capital at
             Austin and its university to build smart, socially-responsible
             investors who can continue to fuel the boom of new startups far into
             the future.
