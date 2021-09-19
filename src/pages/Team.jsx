@@ -171,7 +171,7 @@ const Team = () => {
       picture: "../images/officers/arthur_ji.jpg",
       bio: (
         <ProfileText>
-          Arthur is a UT Austin freshman majoring in Comp. Sci. Honors and
+          Arthur is a UT Austin sophomore majoring in Comp. Sci. Honors and
           Canfield Business Honors as part of the CSB Honors program. He is from
           the Bay Area, California, and, from growing up in Silicon Valley, has
           a profound interest in finance, software, and entrepreneurship. In his
@@ -182,12 +182,12 @@ const Team = () => {
     },
     {
       name: "Zain Sunesara",
-      role: "Director of Operations",
+      role: "Vice President of Operations",
       major: "Finance, Economics",
       picture: "../images/officers/zain_sunesara.jpg",
       bio: (
         <ProfileText>
-          Zain is a freshman Finance and Economics major from Houston, Texas.
+          Zain is a sophomore Finance and Economics major from Houston, Texas.
           This summer, he completed an internship at a start-up tech company
           called Dive Chat. Outside of UT, Zain likes to workout, eat
           Chick-fil-A and visit new places.
@@ -196,7 +196,7 @@ const Team = () => {
     },
     {
       name: "Shubhi Dhanuka",
-      role: "Director of Marketing & Outreach",
+      role: "Vice President of Marketing",
       major: "Finance",
       picture: "../images/officers/shubhi_dhanuka.jpg",
       bio: (
@@ -209,13 +209,28 @@ const Team = () => {
       ),
     },
     {
+      name: "Jonathan Li",
+      role: "Vice President of Technology",
+      major: "Computer Science, Mathematics",
+      picture: "../images/officers/jonathan_li.jpg",
+      bio: (
+        <ProfileText>
+          Jonathan is a sophomore computer science and mathematics major from
+          Plano, Texas. This summer, he completed a machine learning internship 
+          that trained a convolutional neural network (CNN) to detect foreign
+          objects on roads and runways. Outside of VCG, Jonathan enjoys playing
+          card games, improvising on the piano, and learning new languages.
+        </ProfileText>
+      ),
+    },
+    {
       name: "Sharan Tatineni",
-      role: "Director of Finances",
+      role: "Director",
       major: "Finance",
       picture: "../images/officers/sharan_tatineni.jpg",
       bio: (
         <ProfileText>
-          Sharan is a freshman at UT Austin studying Finance from Plano, Texas.
+          Sharan is a sophomore at UT Austin studying Finance from Plano, Texas.
           This summer, he completed economic research and data analysis at a
           COVID-19 non-profit organization. Outside of UT VCG, Sharan enjoys
           following football, eating at his favorite places (Taco Bell), and
